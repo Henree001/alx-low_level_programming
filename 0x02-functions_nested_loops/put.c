@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	int print_last_digit(int n);
+	void jack_bauer(void);
 	return (0);
 }
