@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	int _isalpha(int c);
+	int print_sign(int n);
 	return (0);
 }
