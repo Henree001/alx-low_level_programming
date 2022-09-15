@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	int mul(int a, int b);
+	void print_numbers(void);
 	return (0);
 }
