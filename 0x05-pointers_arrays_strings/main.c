@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	void puts_half(char *str);
+	void print_array(int *a, int n);
 	return (0);
 }
