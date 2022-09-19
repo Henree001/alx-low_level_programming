@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	void swap_int(int *a, int *b);
+	int _strlen(char *s);
 	return (0);
 }
