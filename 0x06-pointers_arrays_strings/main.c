@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	void reverse_array(int *a, int n);
+	char *string_toupper(char *);
 	return (0);
 }
 
