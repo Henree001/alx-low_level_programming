@@ -18,7 +18,10 @@ unsigned int _strspn(char *s, char *accept)
 		if (_strchr(s, accept[j]))
 			len++;
 	}
-	if (s[j] == '\0')
+	if (accept[j] == '\0')
+	{
+		len++;
 		return (len);
+	}
 	return (len);
 }
