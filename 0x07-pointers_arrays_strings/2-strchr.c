@@ -6,6 +6,7 @@
  * @c: character to find
  *
  * Return: character value
+ *
  */
 char *_strchr(char *s, char c)
 {
