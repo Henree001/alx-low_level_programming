@@ -7,6 +7,6 @@
  */
 int main(void)
 {
-	char *_strpbrk(char *s, char *accept);
+	char *_strstr(char *haystack, char *needle);
 	return (0);
 }
