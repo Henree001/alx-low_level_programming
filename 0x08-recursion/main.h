@@ -5,6 +5,7 @@
  * @s: string to do
  * Return: boolean
  */
+int helper(int n, int y);
 int is_palindrome(char *s);
 /**
  * is_print_number - is prime or not
