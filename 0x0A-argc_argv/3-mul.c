@@ -8,13 +8,9 @@
  */
 int main(int argc, char *argv[])
 {
-	int i = 1, j = 2;
-	int prod;
-	prod = atoi(argv[i]) * atoi(argv[j]);
-
 	if (argc == 3)
 	{
-		 printf("%d\n", prod);
+		printf("%d\n", atoi(argv[1]) * atoi(argv[2]));
 		return (0);
 	}
 	else
