@@ -3,7 +3,9 @@
 /**
  * init_dog - initializes a dog
  * @d: address of dog
+ *
  */
+void print_dog(struct dog *d)
 {
 	if (d != NULL)
 	{
