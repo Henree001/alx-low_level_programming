@@ -40,7 +40,7 @@ void print_string(va_list ap)
 
 	if (s == NULL)
 		s = "(nil)";
-	printf("%s", va_arg(ap, char *));
+	printf("%s", s);
 }
 /**
  * print_all - prints all datatype
@@ -63,6 +63,7 @@ void print_all(const char * const format, ...)
 
 	while (format[i] != '\0' && format != NULL)
 	{
+		k = 0;
 		while (ops[k].function != NULL)
 		{
 			if (format[i] == *(ops[k].formatype))
