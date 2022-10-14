@@ -58,24 +58,23 @@ void print_all(const char * const format, ...)
 	};
 	int i = 0, k = 0, j;
 	va_list al;
-	char *sep = ", ";
+	char *sep = "";
 
 	va_start(al, format);
 
 	j = strlen(format);
 	while (format[i] != '\0' && format != NULL)
 	{
-		if (i == j - 1)
-			sep = "";
 		while (ops[k].function != NULL)
 		{
 			if (format[i] == *(ops[k].formatype))
 			{
-				ops[k].function(al);
 				printf("%s", sep);
+				ops[k].function(al);
 			}
 			k++;
 		}
+		sep = ", ";
 		i++;
 	}
 	printf("\n");
