@@ -70,10 +70,10 @@ void print_all(const char * const format, ...)
 			{
 				printf("%s", sep);
 				ops[k].function(al);
+				sep = ", ";
 			}
 			k++;
 		}
-		sep = ", ";
 		i++;
 	}
 	printf("\n");
