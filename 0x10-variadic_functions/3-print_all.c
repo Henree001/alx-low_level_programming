@@ -56,13 +56,12 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
-	int i = 0, k = 0, j;
+	int i = 0, k = 0;
 	va_list al;
 	char *sep = "";
 
 	va_start(al, format);
 
-	j = strlen(format);
 	while (format[i] != '\0' && format != NULL)
 	{
 		while (ops[k].function != NULL)
