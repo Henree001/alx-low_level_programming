@@ -2,6 +2,7 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include "variadic_functions.h"
+#include <string.h>
 /**
  * print_char - prints a char value
  * @ap: arguments parameter
@@ -34,6 +35,7 @@ void print_float(va_list ap)
 void print_string(va_list ap)
 {
 	char *s;
+
 	s = va_arg(ap, char *);
 
 	if (s == NULL)
@@ -42,8 +44,8 @@ void print_string(va_list ap)
 		printf("%s", va_arg(ap, char *));
 }
 /**
- * main - main function
- * Return: 0
+ * print_all - prints all datatype
+ * @format: list of type of arguments
  */
 void print_all(const char * const format, ...)
 {
@@ -54,22 +56,25 @@ void print_all(const char * const format, ...)
 		{"s", print_string},
 		{NULL, NULL}
 	};
-	int i = 0, j = 0;
+	int i = 0, k = 0, j;
 	va_list al;
 	char *sep = ", ";
 
 	va_start(al, format);
-	while (format[j] != '\0' && format != NULL)
-		j++;
+
+	j = strlen(format);
 	while (format[i] != '\0' && format != NULL)
 	{
 		if (i == j - 1)
 			sep = "";
-		if (format[i] == *(ops[i].formatype))
-			 
+		while (ops[k].function != NULL)
 		{
-			ops[i].function(al);
-			printf("%s", sep);
+			if (format[i] == *(ops[k].formatype))
+			{
+				ops[k].function(al);
+				printf("%s", sep);
+			}
+			k++;
 		}
 		i++;
 	}
