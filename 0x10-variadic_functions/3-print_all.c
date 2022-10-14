@@ -39,9 +39,8 @@ void print_string(va_list ap)
 	s = va_arg(ap, char *);
 
 	if (s == NULL)
-		printf("(nil)");
-	else
-		printf("%s", va_arg(ap, char *));
+		s = "(nil)";
+	printf("%s", va_arg(ap, char *));
 }
 /**
  * print_all - prints all datatype
