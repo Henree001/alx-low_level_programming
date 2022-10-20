@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 /**
- * print_list - prints a list
+ * list_len - prints a list
  * @h: head of list
  * Return: number of elements
  */
