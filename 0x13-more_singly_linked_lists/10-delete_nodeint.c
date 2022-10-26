@@ -29,7 +29,10 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	{
 		p = tmp->next;
 		if (!tmp->next->next)
+		{
 			tmp->next = NULL;
+			free(p);
+		}
 		else
 		{
 			tmp->next = tmp->next->next;
