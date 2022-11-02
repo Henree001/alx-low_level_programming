@@ -28,13 +28,6 @@ int main(int argc,  char **argv)
 	while (rd >= 1024)
 	{
 		rd = read(fd, buff, 1024);
-		if (rd == -1)
-		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			close(fd);
-			close(fdd);
-			exit(98);
-		}
 		wr = write(fdd, buff, rd);
 		if (wr == -1)
 		{
@@ -42,6 +35,13 @@ int main(int argc,  char **argv)
 			exit(99);
 		}
 	}
+	if (rd == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			close(fd);
+			close(fdd);
+			exit(98);
+		}
 	close(fd);
 	close(fdd);
 	if (close(fd) == -1 || close(fdd) == -1)
