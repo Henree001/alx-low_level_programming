@@ -25,7 +25,7 @@ int main(int argc,  char **argv)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((rd = read(fd, buff, 1024)) >= 1024)
+	while ((rd = read(fd, buff, 1024)) != 0)
 	{
 		rd = read(fd, buff, 1024);
 		wr = write(fdd, buff, rd);
@@ -40,7 +40,7 @@ int main(int argc,  char **argv)
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-	if (close(fd) == -1 || close(fdd) == -1)
+	if ((close(fd) == -1) || (close(fdd) == -1))
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdd);
 		exit(100);
