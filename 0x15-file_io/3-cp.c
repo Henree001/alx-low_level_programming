@@ -27,7 +27,6 @@ int main(int argc,  char **argv)
 	}
 	while ((rd = read(fd, buff, 1024)) != 0)
 	{
-		rd = read(fd, buff, 1024);
 		wr = write(fdd, buff, rd);
 		if (wr == -1)
 		{
