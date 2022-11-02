@@ -40,8 +40,6 @@ int main(int argc,  char **argv)
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 			exit(98);
 		}
-	close(fd);
-	close(fdd);
 	if (close(fd) == -1 || close(fdd) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fdd);
