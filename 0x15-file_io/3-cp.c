@@ -38,8 +38,6 @@ int main(int argc,  char **argv)
 	if (rd == -1)
 		{
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			close(fd);
-			close(fdd);
 			exit(98);
 		}
 	close(fd);
