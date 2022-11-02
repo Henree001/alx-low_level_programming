@@ -28,17 +28,19 @@ int main(int argc,  char **argv)
 	while (rd >= 1024)
 	{
 		rd = read(fd, buff, 1024);
+		if (rd == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			closer(fd);
+			closer(fdd);
+			exit(98);
+		}
 		wr = write(fdd, buff, rd);
 		if (wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			exit(99);
 		}
-	}
-	if (rd == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
 	}
 	close(fd);
 	close(fdd);
