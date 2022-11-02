@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 #include <string.h>
 /**
  * create_file - creates a file
@@ -17,7 +17,7 @@ int create_file(const char *filename, char *text_content)
 	fd = open(filename, O_CREAT | O_RDWR | O_TRUNC);
 	if (fd == -1)
 		return (-1);
-	wr = write(fd, text_content,strlen(text_content));
+	wr = write(fd, text_content, strlen(text_content));
 	if (wr == -1)
 		return (-1);
 	close(fd);
