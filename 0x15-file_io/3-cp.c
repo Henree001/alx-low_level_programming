@@ -31,8 +31,8 @@ int main(int argc,  char **argv)
 		if (rd == -1)
 		{
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
-			closer(fd);
-			closer(fdd);
+			close(fd);
+			close(fdd);
 			exit(98);
 		}
 		wr = write(fdd, buff, rd);
