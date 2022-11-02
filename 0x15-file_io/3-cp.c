@@ -7,7 +7,7 @@
 int main(int argc,  char **argv)
 {
 	int fd, fdd, rd, wr;
-	char *buff[1024];
+	char buff[1024];
 
 	if (argc != 3)
 	{
