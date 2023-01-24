@@ -12,11 +12,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *element;
 	hash_node_t *temp;
-	unsigned long int index = key_index((unsigned char *)key, ht->size);
+	unsigned long int index;
 
 
 	if (ht == NULL || strlen(key) == 0 || key == NULL || value == NULL)
 		return (0);
+	index = key_index((unsigned char *)key, ht->size);
 	temp = ht->array[index];
 	while (temp)
 	{
